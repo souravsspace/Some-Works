@@ -1,0 +1,86 @@
+:root {
+  --boxColor: rgba(0, 255, 255, 0.478);
+}
+
+body {
+  min-height: 100vh;
+  background-image: 
+  radial-gradient(rgba(0, 0, 0, 0.25), rgb(0, 0, 0) 70%),
+  repeating-conic-gradient(
+    from 45deg,
+    #111 0deg 90deg,
+    #fffa 90deg 180deg
+  );
+  background-size: 100%, 5em 5em;
+
+  display: grid;
+  place-items: center;
+
+  transform-style: preserve-3d;
+  
+}
+
+@keyframes boxRotate {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.box-container {
+  width: 8em;
+  aspect-ratio: 1;
+
+  animation: boxRotate 10s infinite linear;
+
+  position: relative;
+
+
+  transform-style: preserve-3d;
+
+}
+
+
+
+.left, .right, .top, .bottom, .front, .back {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+
+  background: var(--boxColor);
+
+  
+  text-align: center;
+
+}
+
+.front {
+  transform: translateZ(4em);
+}
+
+
+.left {
+  transform: translateX(-4em) rotateY(-90deg);
+}
+
+.right {
+  transform: translateX(4em) rotateY(90deg);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(4em);
+}
+
+.top {
+  transform: translateY(-50%) rotateX(90deg);
+}
+
+.bottom {
+  transform: translateY(50%) rotateX(90deg);
+}
+
+
+
+
+
+

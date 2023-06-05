@@ -1,0 +1,118 @@
+:root {
+  --border-us: 5px;
+
+  --vo: 0.25rem;
+  --ho: 0.25rem;
+  --vo-minus: -0.25rem;
+  --ho-minus: -0.25rem;
+  --spreed: 1rem;
+  --color: 0 0% 0%;
+  --opacity: 0.25;
+}
+
+[class*=box-shadow]{
+  box-shadow: 
+  var(--vo) var(--ho) var(--spreed) hsl(var(--color) / var(--opacity)),
+  var(--vo-minus) var(--ho-minus) var(--spreed) hsl(var(--color) / var(--opacity))
+  ;
+}
+
+.grid {
+  min-height: 100vh;
+
+  font-family: sans-serif;
+  background-color: hsl(0 0% 100%);
+
+  display: grid;
+  place-items: center;
+}
+
+.grid-box {
+  background-color: hsl(0 0% 95%);
+
+  height: 20em;
+  width: 25em;
+
+  border-radius: var(--border-us);
+
+  padding: 0;
+  margin: 0;
+
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+
+
+.grid-box > p {
+  font-weight: 900;
+  font-size: 13px;
+
+  text-align: center;
+
+  margin: 0;
+}
+
+
+.grid-box p:nth-child(1){
+  background: red;
+}
+
+.grid-box p:nth-child(2){
+  background: gray;
+}
+
+.grid-box p:nth-child(3){
+  background: green;
+
+  grid-column: span 2;
+}
+
+.grid-box p:nth-child(4){
+  background: yellowgreen;
+}
+
+.grid-box p:nth-child(5){
+  background: blue;
+
+  grid-column: span 2;
+}
+
+.grid-box p:nth-child(6){
+  background: violet;
+}
+
+.grid-box p:nth-child(7){
+  background: aqua;
+
+  grid-column: span 2;
+}
+
+.grid-box p:nth-child(8){
+  background: gold;
+
+  grid-column: span 2;
+}
+
+.grid-box p:nth-child(9){
+  background: rebeccapurple;
+}
+
+.grid-box p:nth-child(10){
+  background: darkgoldenrod;
+
+  grid-column: span 3;
+}
+
+.grid-box p:nth-child(11){
+  background: palevioletred;
+  grid-row: span 2;
+}
+
+.grid-box p:nth-child(12){
+  background: firebrick;
+
+  grid-column: span 3;
+  grid-row: span 2;
+}

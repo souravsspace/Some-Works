@@ -1,0 +1,101 @@
+:root {
+  --primary-clr: hsl(0, 100%, 60%);
+  --secondery-clr: hsl(272, 100%, 65%);
+
+  --h1: 2.5em;
+  --h2: 2em;
+  --h3: 1.5em;
+
+  --ap-fontSize: 18px;
+
+  --vo: 1rem;
+  --ho: 0.75rem;
+  --spread: 1rem;
+  --clr: 0 0 0;
+  --opacity: 0.25;
+}
+
+[class*="box-shadow"]{
+  box-shadow: var(--vo) var(--ho) var(--spread) rgba(var(--clr) / var(--opacity));
+}
+
+/* reset */
+
+*, 
+*::before, 
+*::after {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark light;
+}
+
+body {
+  min-height: 100vh;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, p, article {
+  padding: 0;
+}
+
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+a {
+  text-decoration: none;
+}
+
+a, p {
+  font-size: var(--ap-fontSize);
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+
+/* utility class */
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-center {
+  display: grid;
+  place-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+

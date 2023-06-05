@@ -1,0 +1,87 @@
+:root {
+  --border-us: 5px;
+
+  --vo: 0.25rem;
+  --ho: 0.25rem;
+  --vo-minus: -0.25rem;
+  --ho-minus: -0.25rem;
+  --spreed: 1rem;
+  --color: 0 0% 0%;
+  --opacity: 0.25;
+}
+
+[class*=box-shadow]{
+  box-shadow: 
+  var(--vo) var(--ho) var(--spreed) hsl(var(--color) / var(--opacity)),
+  var(--vo-minus) var(--ho-minus) var(--spreed) hsl(var(--color) / var(--opacity))
+  ;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: sans-serif;
+  background-color: hsl(0 0% 100%);
+
+  display: grid;
+  place-items: center;
+}
+
+.form {
+  background: hsl(0 0% 95%);
+  border-radius: var(--border-us);
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  gap: 0.25rem;
+
+  padding-inline: 2em;
+  padding-block: 2em;
+}
+
+label {
+  letter-spacing: 1px;
+}
+
+input {
+  font-size: 0.94rem;
+  outline: none;
+  border: 1.5px solid hsl(0 0% 0% / 0.2);
+
+  border-radius: var(--border-us);
+
+  padding: 0.15rem 0.25rem;
+}
+
+input:invalid {
+  animation: shake 300ms ease;
+}
+
+@keyframes shake {
+  25% {
+    transform: translateX(5px);
+    border-color: rgb(255, 0, 0);
+  }
+  50% {
+    transform: translateX(-5px);
+    border-color: rgb(255, 0, 0);
+  }
+  75% {
+    transform: translateX(5px);
+    border-color: rgb(255, 0, 0);
+  }
+}
+
+input:hover{
+  outline: 1px solid hsl(179, 100%, 40%);
+}
+
+input:focus {
+  border-color: hsl(179, 100%, 40%);
+}
+
+input:last-child {
+  margin-top: 1rem;
+}
+

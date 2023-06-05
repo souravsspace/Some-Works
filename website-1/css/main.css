@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
+
+:root {
+  --primary-clr-900: hsl(0, 100%, 60%);
+  --primary-clr-600: hsl(0, 100%, 70%);
+  
+  --white-clr-800: hsl(0, 0%, 90%);
+  --black-clr-800: hsl(0, 0%, 10%);
+
+  --rem-1: 1rem;
+  --rem-2: 2rem;
+  --rem-3: 3rem;
+
+  --em-1: 1em;
+  --em-2: 2em;
+  --em-3: 3em;
+
+  --vo: 1rem;
+  --ho: 0.75rem;
+  --spread: 1rem;
+  --clr: 0 0 0;
+  --opacity: 0.25;
+
+  --accent-ff: 'Lobster', cursive;
+  --normal--ff: 'Roboto', sans-serif;
+
+}
+
+body {
+  background-color: var(--white-clr-800);
+  font-family: var(--normal--ff);
+}
+
+[class*="box-shadow"]{
+  box-shadow: var(--vo) var(--ho) var(--spread) rgba(var(--clr) / var(--opacity));
+}
+
+/* reset */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, p, article {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+
+/* utility class */
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+/* header */
+
+.header-first {
+  padding-block: var(--em-1);
+  padding-inline: clamp(1em, 7vw, 7em);
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: var(--primary-clr-600);
+
+  color: var(--white-clr-800);
+}
+
+.header-logo {
+  font-family: var(--accent-ff);
+  cursor: pointer;
+  font-size: 2em;
+}
+
+.nav-content {
+  gap: var(--rem-1);
+}
+
+.nav-content li a {
+  
+  cursor: pointer;
+}
+
+.nav-content  a {
+  color: var(--white-clr-800);
+}
+
+.nav-content li {
+  position: relative;
+}
+
+.nav-content li:not(:last-child) a::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--white-clr-800);
+
+  transition: width 200ms ease;
+}
+
+.nav-content li:not(:last-child) a:hover::before {
+  width: 100%;
+}
+
+.nav-content li:last-child a {
+  border-radius: 100vmax;
+  border: 1px solid var(--white-clr-800);
+
+  padding: 4px 8px;
+}
+
+.nav-content li:last-child a:hover{
+  background-color: var(--white-clr-800);
+  color: var(--black-clr-800);
+}
+
+
+
+
+

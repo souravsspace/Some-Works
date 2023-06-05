@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,700");
+
+:root {
+  --level-one: translateZ(2rem);
+  --level-two: translateZ(4rem);
+  --level-three: translateZ(6rem);
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+
+  --em-bg: 5em;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: "Oswald", sans-serif;
+
+  display: grid;
+  place-items: center;
+
+  background-image: repeating-conic-gradient(
+    from 45deg,
+    #222 0deg 90deg,
+    #111 90deg 180deg
+  );
+  background-size: var(--em-bg) var(--em-bg);
+}
+
+.card {
+  width: 400px;
+}
+
+.card--content {
+  position: relative;
+  padding: 15em 2em;
+  text-align: center;
+  color: rgb(255, 255, 255);
+
+  display: grid;
+  place-items: center;
+
+  transition: transform 3s ease;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card--content {
+  transform: rotateY(180deg);
+}
+
+.card--front,
+.card--back {
+  position: absolute;
+  inset: 0 0 0 0;
+  padding: 5em 3em;
+
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  box-shadow: 2px 5px 1rem rgb(0 0 0 / 0.5), -2px -5px 1rem rgba(0, 0, 0, 0.5);
+}
+
+.card--front {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRTeFS4Hj3SqB-M1q4zs4C9yxqUGeByCnTew&usqp=CAU);
+  background-size: cover;
+}
+
+.card--front::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 0;
+  margin: 0.8em;
+
+  border: 3px solid #fff;
+
+  background-color: rgb(183 201 229 / 0.1);
+
+  transform: var(--level-one);
+}
+
+.card--title {
+  font-size: 3em;
+  font-weight: var(--fw-bold);
+  order: 2;
+
+  transform: var(--level-three);
+}
+
+.card--subtitle {
+  font-size: 0.86em;
+  list-style: 1;
+  text-transform: uppercase;
+
+  transform: var(--level-two);
+}
+
+.card--back {
+  background: #fff;
+  color: #555;
+
+  transform: rotateY(180deg);
+}
+
+.card--body {
+  font-size: 1em;
+  font-weight: var(--fw-bold);
+  transform: var(--level-two);
+}

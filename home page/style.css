@@ -1,0 +1,86 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section {
+  padding-inline: clamp(1rem, 7vw, 8rem);
+  padding-block: 8rem;
+}
+
+.section-one {
+  background-color: lightblue;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search input {
+  outline: none;
+  border: 1px solid rgba(0 0 0 / 0.25);
+  border-radius: 100vmax;
+
+  height: 3.3vh;
+
+  padding: 12px 10px;
+
+}
+
+.section-two {
+  background-color: wheat;
+
+  padding-block-start: 4rem;
+}
+
+.section-two > h1 {
+  text-align: center;
+
+  margin-block-end: 4rem;
+}
+
+.teams {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.team--content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  background-color: #999;
+  color: #fff;
+
+  padding: 3rem 1rem;
+
+  border-radius: 5px;
+ 
+}
+
+.team--content p {
+  text-align: center;
+}
+
+.team--content img {
+  border-radius: 50%;
+}
+
+.section-three {
+  background-color: cornflowerblue;
+}
+
+
+/* mobile */
+
+@media (max-width: 330px){
+  .section-one {
+    text-align: center;
+    flex-direction: column;
+  }
+}
